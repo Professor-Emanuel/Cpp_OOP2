@@ -385,3 +385,167 @@ https://www.geeksforgeeks.org/difference-between-inheritance-and-polymorphism/?r
 https://www.geeksforgeeks.org/runtime-polymorphism-in-various-types-of-inheritance-in-c/?ref=rp
    
 
+Operators Overloading in C++
+You can redefine or overload most of the built-in operators available in C++. Thus, a programmer can use operators with user-defined types as well.
+
+Overloaded operators are functions with special names: the keyword "operator" followed by the symbol for the operator being defined. Like any other function, an overloaded operator has a return type and a parameter list.
+
+Box operator+(const Box&);
+declares the addition operator that can be used to add two Box objects and returns final Box object. Most overloaded operators may be defined as ordinary non-member functions or as class member functions. In case we define above function as non-member function of a class then we would have to pass two arguments for each operand as follows −
+
+Box operator+(const Box&, const Box&);
+Following is the example to show the concept of operator over loading using a member function. Here an object is passed as an argument whose properties will be accessed using this object, the object which will call this operator can be accessed using this operator 
+   
+ 
+Overloadable/Non-overloadableOperators
+Following is the list of operators which can be overloaded −
+
++	-	*	/	%	^
+&	|	~	!	,	=
+<	>	<=	>=	++	--
+<<	>>	==	!=	&&	||
++=	-=	/=	%=	^=	&=
+|=	*=	<<=	>>=	[]	()
+->	->*	new	new []	delete	delete []
+Following is the list of operators, which can not be overloaded −
+
+::	.*	.	?:
+   
+
+Unary Operators Overloading in C++
+   
+The unary operators operate on a single operand and following are the examples of Unary operators −
+
+The increment (++) and decrement (--) operators.
+The unary minus (-) operator.
+The logical not (!) operator.
+The unary operators operate on the object for which they were called and normally, this operator appears on the left side of the object, as in !obj, -obj, and ++obj but sometime they can be used as postfix as well like obj++ or obj--.
+   
+Binary Operators Overloading in C++
+   
+The binary operators take two arguments and following are the examples of Binary operators. You use binary operators very frequently like addition (+) operator, subtraction (-) operator and division (/) operator.
+   
+
+Relational Operators Overloading in C++
+   
+There are various relational operators supported by C++ language like (<, >, <=, >=, ==, etc.) which can be used to compare C++ built-in data types.
+
+You can overload any of these operators, which can be used to compare the objects of a class.
+   
+   
+Input/Output Operators Overloading in C++
+   
+C++ is able to input and output the built-in data types using the stream extraction operator >> and the stream insertion operator <<. The stream insertion and stream extraction operators also can be overloaded to perform input and output for user-defined types like an object.
+
+Here, it is important to make operator overloading function a friend of the class because it would be called without creating an object.
+   
+Overloading Increment ++ & Decrement --
+   
+The increment (++) and decrement (--) operators are two important unary operators available in C++.
+   
+   
+Assignment Operators Overloading in C++
+   
+You can overload the assignment operator (=) just as you can other operators and it can be used to create an object just like the copy constructor.
+   
+   
+Function Call Operator () Overloading in C++
+   
+The function call operator () can be overloaded for objects of class type. When you overload ( ), you are not creating a new way to call a function. Rather, you are creating an operator function that can be passed an arbitrary number of parameters.
+   
+Subscripting [] Operator Overloading in C++
+   
+The subscript operator [] is normally used to access array elements. This operator can be overloaded to enhance the existing functionality of C++ arrays.
+   
+   
+Class Member Access Operator (->) Overloading in C++
+   
+The class member access operator (->) can be overloaded but it is bit trickier. It is defined to give a class type a "pointer-like" behavior. The operator -> must be a member function. If used, its return type must be a pointer or an object of a class to which you can apply.
+
+The operator-> is used often in conjunction with the pointer-dereference operator * to implement "smart pointers." These pointers are objects that behave like normal pointers except they perform other tasks when you access an object through them, such as automatic object deletion either when the pointer is destroyed, or the pointer is used to point to another object.
+
+The dereferencing operator-> can be defined as a unary postfix operator. That is, given a class −
+
+class Ptr {
+   //...
+   X * operator->();
+};
+Objects of class Ptr can be used to access members of class X in a very similar manner to the way pointers are used. For example −
+
+void f(Ptr p ) {
+   p->m = 10 ; // (p.operator->())->m = 10
+}
+The statement p->m is interpreted as (p.operator->())->m.
+   
+   
+https://www.geeksforgeeks.org/operator-overloading-c/
+   
+   
+In C++, we can make operators work for user-defined classes. This means C++ has the ability to provide the operators with a special meaning for a data type, this ability is known as operator overloading. For example, we can overload an operator ‘+’ in a class like String so that we can concatenate two strings by just using +. Other example classes where arithmetic operators may be overloaded are Complex Numbers, Fractional Numbers, Big Integer, etc.
+
+Operator overloading is a compile-time polymorphism. It is an idea of giving special meaning to an existing operator in C++ without changing its original meaning.
+   
+class A
+{
+
+};
+
+int main()
+{
+      A   a1,a2,a3;
+
+      a3= a1 + a2;
+
+      return 0;
+}
+
+In this example, we have 3 variables “a1”, “a2” and “a3” of type “class A”. Here we are trying to add two objects “a1” and “a2”, which are of user-defined type i.e. of type “class A” using the “+” operator. This is not allowed, because the addition operator “+” is predefined to operate only on built-in data types. But here, “class A” is a user-defined type, so the compiler generates an error. This is where the concept of “Operator overloading” comes in. 
+Now, if the user wants to make the operator “+” to add two class objects, the user has to redefine the meaning of the “+” operator such that it adds two class objects. This is done by using the concept “Operator overloading”. So the main idea behind “Operator overloading” is to use c++ operators with class variables or class objects. Redefining the meaning of operators really does not change their original meaning; instead, they have been given additional meaning along with their existing ones.
+   
+  
+What is the difference between operator functions and normal functions? 
+Operator functions are the same as normal functions. The only differences are, that the name of an operator function is always the operator keyword followed by the symbol of the operator and operator functions are called when the corresponding operator is used.
+   
+   
+Can we overload all operators? 
+Almost all operators can be overloaded except a few. Following is the list of operators that cannot be overloaded. 
+
+sizeof
+typeid
+Scope resolution (::)
+Class member access operators (.(dot), .* (pointer to member operator))
+Ternary or conditional (?:)
+   
+Why can’t the above-stated operators be overloaded?
+
+1. sizeof – This returns the size of the object or datatype entered as the operand. This is evaluated by the compiler and cannot be evaluated during runtime. The proper incrementing of a pointer in an array of objects relies on the sizeof operator implicitly. Altering its meaning using overloading would cause a fundamental part of the language to collapse.
+
+2. typeid: This provides a CPP program with the ability to recover the actual derived type of the object referred to by a pointer or reference. For this operator, the whole point is to uniquely identify a type. If we want to make a user-defined type ‘look’ like another type, polymorphism can be used but the meaning of the typeid operator must remain unaltered, or else serious issues could arise.
+
+3. Scope resolution (::): This helps identify and specify the context to which an identifier refers by specifying a namespace. It is completely evaluated at runtime and works on names rather than values. The operands of scope resolution are note expressions with data types and CPP has no syntax for capturing them if it were overloaded. So it is syntactically impossible to overload this operator.
+
+4. Class member access operators (.(dot), .* (pointer to member operator)): 
+   
+5. Ternary or conditional (?:): The ternary or conditional operator is a shorthand representation of an if-else statement. In the operator, the true/false expressions are only evaluated on the basis of the truth value of the conditional expression. 
+
+conditional statement ? expression1 (if statement is TRUE) : expression2 (else)
+
+A function overloading the ternary operator for a class say ABC using the definition
+
+ABC operator ?: (bool condition, ABC trueExpr, ABC falseExpr);
+
+would not be able to guarantee that only one of the expressions was evaluated. Thus, the ternary operator cannot be overloaded.
+   
+Important points about operator overloading 
+1) For operator overloading to work, at least one of the operands must be a user-defined class object.
+2) Assignment Operator: Compiler automatically creates a default assignment operator with every class. The default assignment operator does assign all members of the right side to the left side and works fine in most cases (this behaviour is the same as the copy constructor). See this for more details. 
+3) Conversion Operator: We can also write conversion operators that can be used to convert one type to another type. 
+   
+Overloaded conversion operators must be a member method. Other operators can either be the member method or the global method.
+4) Any constructor that can be called with a single argument works as a conversion constructor, which means it can also be used for implicit conversion to the class being constructed. 
+   
+
+   
+https://www.geeksforgeeks.org/smart-pointers-cpp/
+   
+   
