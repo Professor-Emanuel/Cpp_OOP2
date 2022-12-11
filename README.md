@@ -549,3 +549,93 @@ Overloaded conversion operators must be a member method. Other operators can eit
 https://www.geeksforgeeks.org/smart-pointers-cpp/
    
    
+C++ STL Tutorial
+
+https://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm
+   
+The C++ STL (Standard Template Library) is a powerful set of C++ template classes to provide general-purpose classes and functions with templates that implement many popular and commonly used algorithms and data structures like vectors, lists, queues, and stacks.
+
+At the core of the C++ Standard Template Library are following three well-structured components −
+
+Sr.No	Component & Description
+1	
+Containers
+
+Containers are used to manage collections of objects of a certain kind. There are several different types of containers like deque, list, vector, map etc.
+
+2	
+Algorithms
+
+Algorithms act on containers. They provide the means by which you will perform initialization, sorting, searching, and transforming of the contents of containers.
+
+3	
+Iterators
+
+Iterators are used to step through the elements of collections of objects. These collections may be containers or subsets of containers.
+
+We will discuss about all the three C++ STL components in next chapter while discussing C++ Standard Library. For now, keep in mind that all the three components have a rich set of pre-defined functions which help us in doing complicated tasks in very easy fashion.
+
+Let us take the following program that demonstrates the vector container (a C++ Standard Template) which is similar to an array with an exception that it automatically handles its own storage requirements in case it grows 
+   
+   
+https://www.geeksforgeeks.org/the-c-standard-template-library-stl/
+   
+Sort in C++ Standard Template Library (STL)
+https://www.geeksforgeeks.org/sort-algorithms-the-c-standard-template-library-stl/
+   
+Sorting is one of the most basic functions applied to data. It means arranging the data in a particular fashion, which can be increasing or decreasing. There is a builtin function in C++ STL by the name of sort(). 
+This function internally uses IntroSort. In more details it is implemented using hybrid of QuickSort, HeapSort and InsertionSort.By default, it uses QuickSort but if QuickSort is doing unfair partitioning and taking more than N*logN time, it switches to HeapSort and when the array size becomes really small, it switches to InsertionSort. 
+   
+Binary Search in C++ Standard Template Library (STL)
+https://www.geeksforgeeks.org/binary-search-algorithms-the-c-standard-template-library-stl/
+   
+Binary search is a widely used searching algorithm that requires the array to be sorted before search is applied. The main idea behind this algorithm is to keep dividing the array in half (divide and conquer) until the element is found, or all the elements are exhausted.
+It works by comparing the middle item of the array with our target, if it matches, it returns true otherwise if the middle term is greater than the target, the search is performed in the left sub-array. 
+If the middle term is less than the target, the search is performed in the right sub-array.
+   
+   
+https://www.youtube.com/watch?v=vohuRrwbTT4&ab_channel=ReelLearning
+   
+   
+Algorithm Library | C++ Magicians STL Algorithm
+https://www.geeksforgeeks.org/c-magicians-stl-algorithms/
+   
+   
+For all those who aspire to excel in competitive programming, only having a knowledge about containers of STL is of less use till one is not aware what all STL has to offer. 
+STL has an ocean of algorithms, for all < algorithm > library functions : Refer here: https://www.geeksforgeeks.org/algorithms-library-c-stl/
+Some of the most used algorithms on vectors and most useful one’s in Competitive Programming are mentioned as follows :
+
+Non-Manipulating Algorithms
+
+1.sort(first_iterator, last_iterator) – To sort the given vector.
+2.sort(first_iterator, last_iterator, greater<int>()) – To sort the given container/vector in descending order
+3.reverse(first_iterator, last_iterator) – To reverse a vector. ( if ascending -> descending  OR  if descending -> ascending)
+4.*max_element (first_iterator, last_iterator) – To find the maximum element of a vector.
+5.*min_element (first_iterator, last_iterator) – To find the minimum element of a vector.
+6.accumulate(first_iterator, last_iterator, initial value of sum) – Does the summation of vector elements
+7.count(first_iterator, last_iterator,x) – To count the occurrences of x in vector.
+8. find(first_iterator, last_iterator, x) – Returns an iterator to the first occurrence of x in vector and points to last address of vector ((name_of_vector).end()) if element is not present in vector.
+9. binary_search(first_iterator, last_iterator, x) – Tests whether x exists in sorted vector or not.
+10. lower_bound(first_iterator, last_iterator, x) – returns an iterator pointing to the first element in the range [first,last) which         has a value not less than ‘x’.
+11. upper_bound(first_iterator, last_iterator, x) – returns an iterator pointing to the first element in the range [first,last)                  which has a value greater than ‘x’.    
+   
+
+Some Manipulating Algorithms
+
+1.arr.erase(position to be deleted) – This erases selected element in vector and shifts and resizes the vector elements accordingly.
+2.arr.erase(unique(arr.begin(),arr.end()),arr.end()) – This erases the duplicate occurrences in sorted vector in a single line.
+3. next_permutation(first_iterator, last_iterator) – This modified the vector to its next permutation.
+4. prev_permutation(first_iterator, last_iterator) – This modified the vector to its previous permutation. 
+5. distance(first_iterator,desired_position) – It returns the distance of desired position from the first iterator.This function               is very useful while finding the index.    
+   
+   
+Array algorithms in C++ STL (all_of, any_of, none_of, copy_n and iota)
+https://www.geeksforgeeks.org/useful-array-algorithms-in-c-stl/
+   
+   
+std::partition in C++ STL
+https://www.geeksforgeeks.org/stdpartition-in-c-stl/
+   
+   
+
+   
